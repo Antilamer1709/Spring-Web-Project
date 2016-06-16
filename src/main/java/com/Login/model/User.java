@@ -13,13 +13,13 @@ public class User {
     private int id;
     @Id
     @Column(name = "login", unique = true, nullable = false, length = 16)
-    private String UserLogin;
+    private String login;
     @Column(name = "password", nullable = false, length = 128)
-    private String UserPassword;
+    private String password;
     @Column(name = "fullName", nullable = false, length = 64)
-    private String UserFullName;
+    private String fullName;
     @Column(name = "email", unique = true, nullable = false, length = 64)
-    private String UserEmail;
+    private String email;
 
     public int getId() {
         return id;
@@ -30,43 +30,43 @@ public class User {
     }
 
     public String getUserLogin() {
-        return UserLogin;
+        return login;
     }
 
     public void setUserLogin(String userLogin) {
-        UserLogin = userLogin;
+        this.login = userLogin;
     }
 
-    public String getUserPassword() {
-        return UserPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        UserPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserFullName() {
-        return UserFullName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUserFullName(String userFullName) {
-        UserFullName = userFullName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getUserEmail() {
-        return UserEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.UserEmail = userEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public User(Registration registrationForm)
     {
-        this.UserLogin = registrationForm.getRegisterlogin();
-        this.UserPassword = registrationForm.getRegisterpassword();
-        this.UserFullName = registrationForm.getRegisterfullname();
-        this.UserEmail = registrationForm.getRegisteremail();
+        this.login = registrationForm.getRegisterlogin();
+        this.password = registrationForm.getRegisterpassword();
+        this.fullName = registrationForm.getRegisterfullname();
+        this.email = registrationForm.getRegisteremail();
     }
 
     public User() {

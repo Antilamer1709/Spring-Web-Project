@@ -15,15 +15,15 @@
         </property>
 
         <!--Password column -->
-        <property name="userPassword" type="string">
+        <property name="getPassword" type="string">
             <column name="password" length="128" not-null="true" />
         </property>
         <!--Full Name column -->
-        <property name="userFullName" type="string">
+        <property name="getFullName" type="string">
             <column name="fullName" length="64" not-null="true" />
         </property>
         <!--Email column -->
-        <property name="userEmail" type="string">
+        <property name="getEmail" type="string">
             <column name="email" length="64" unique="true" not-null="true" />
         </property>
 

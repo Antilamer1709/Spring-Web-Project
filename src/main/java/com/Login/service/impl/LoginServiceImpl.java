@@ -29,7 +29,7 @@ public class LoginServiceImpl implements LoginService {
             String encodePassword = CryptUtil.md5(login.getPassword());
             logger.info(encodePassword);
             logger.info(login.getPassword());
-            if (encodePassword.equals(user.getUserPassword())) {
+            if (encodePassword.equals(user.getPassword())) {
                 return true;
             } else {
                 return false;
@@ -43,11 +43,11 @@ public class LoginServiceImpl implements LoginService {
         Session session = sessionFactory.getCurrentSession();
         User registerUser = new User(registration);
         logger.info(registerUser.getUserLogin());
-        logger.info(registerUser.getUserPassword());
-        logger.info(registerUser.getUserEmail());
-        logger.info(registerUser.getUserFullName());
+        logger.info(registerUser.getPassword());
+        logger.info(registerUser.getEmail());
+        logger.info(registerUser.getFullName());
         //cryptPassword
-        registerUser.setUserPassword(CryptUtil.md5(registerUser.getUserPassword()));
+        registerUser.setPassword(CryptUtil.md5(registerUser.getPassword()));
         session.save(registerUser);
     }
 
